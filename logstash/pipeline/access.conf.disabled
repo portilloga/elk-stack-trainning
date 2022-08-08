@@ -1,0 +1,17 @@
+input{
+	beats{
+		port => 5044
+		host => "logstash"
+	}
+	
+}
+
+output{
+	file{
+		path => "/tmp/logstash/output.txt"	
+		codec => json_lines
+#		codec => rubydebug{
+#			metadata => true
+#		}
+	}
+}
